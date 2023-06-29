@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <data>
+        <variable
+            name="dataset"
+            type="com.example.livedataroom.adptor.UserAdaptor" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp"
+        >
+
+        <EditText
+            android:id="@+id/name_ed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="10dp"
+            android:inputType="textPersonName"
+            android:hint="Name" />
+
+        <EditText
+            android:id="@+id/lastname_ed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="LastName" />
+
+        <EditText
+            android:id="@+id/mobile_ed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Mobile"
+            android:maxLength="10"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/add_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Add" />
+        <Button
+            android:id="@+id/update_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Update" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NoUser" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:background="@color/purple_200"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:text="Name"
+                android:textColor="@color/white"
+                android:padding="10dp"/>
+
+
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Last Nmae"
+                android:textColor="@color/white"
+                android:layout_marginLeft="5dp"/>
+
+
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:text='Number'
+                android:textColor="@color/white"
+                android:layout_marginLeft="5dp"/>
+
+
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/userlistRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adapter='@{dataset}'
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+
+
+
+    </LinearLayout>
+
+
+</layout>
